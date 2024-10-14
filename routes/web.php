@@ -87,3 +87,7 @@ Route::apiResource('api',ApiController::class);
 Route::get('invokable',InvokableController::class);
 
 
+Route::post('route-14',[FirstController::class,'myfunction4']);
+Route::put('route-15',[FirstController::class,'myfunction4']);
+
+
