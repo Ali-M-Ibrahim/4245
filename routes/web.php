@@ -5,6 +5,9 @@ use App\Http\Controllers\FirstController;
  use App\Http\Controllers\ResourceController;
  use App\Http\Controllers\ApiController;
  use App\Http\Controllers\InvokableController;
+
+ use App\Http\Controllers\RelationshipController;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -89,5 +92,13 @@ Route::get('invokable',InvokableController::class);
 
 Route::post('route-14',[FirstController::class,'myfunction4']);
 Route::put('route-15',[FirstController::class,'myfunction4']);
+
+
+Route::get('test1',[RelationshipController::class,'getBooksFromAuthor']);
+ Route::get('test2',[RelationshipController::class,'getAuthorFromBook']);
+ Route::get('test3',[RelationshipController::class,'getDetailsFromBook']);
+ Route::get('test4',[RelationshipController::class,'getBookFromDetails']);
+ Route::get('test5',[RelationshipController::class,'getReadersFromBook']);
+ Route::get('test6',[RelationshipController::class,'getBooksFromReader']);
 
 
