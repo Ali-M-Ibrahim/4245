@@ -5,8 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Post extends Model
+class Customer extends Model
 {
     use HasFactory;
-    protected $fillable= ['name','description','likes','shares','date_of_creation'];
+
+    protected  $fillable= ['name','balance','address','dob'];
 }

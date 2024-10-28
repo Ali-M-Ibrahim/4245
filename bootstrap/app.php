@@ -16,7 +16,14 @@ return Application::configure(basePath: dirname(__DIR__))
             'route-15',
             'addReaderFromApi',
             'addReaderMethod2FromPostman',
-            'addReader3'
+            'addReader3',
+            'addCustomer3',
+            'updateCustomer2/*',
+            'updateCustomer3',
+            'deleteCustomer/*',
+            'updateCustomer4/*',
+            'post/*',
+            'post'
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {

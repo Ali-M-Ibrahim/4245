@@ -7,6 +7,10 @@ use App\Http\Controllers\FirstController;
  use App\Http\Controllers\InvokableController;
  use App\Http\Controllers\RelationshipController;
  use App\Http\Controllers\ReaderController;
+ use App\Http\Controllers\CustomerController;
+ use App\Http\Controllers\PostControllerAPI;
+
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -139,4 +143,22 @@ Route::get('getReadereOrderByIddesc',[ReaderController::class,'getReadereOrderBy
  Route::post('addReader3',[ReaderController::class,'addReader3']);
 
 
+
+
+Route::get('getAllCustomers',[CustomerController::class,'getAllCustomers']);
+Route::get('getCustomerById/{id}',[CustomerController::class,'getCustomerById']);
+Route::get('getCustomerWithCondition',[CustomerController::class,'getCustomerWithCondition']);
+Route::get('addCustomer',[CustomerController::class,'addCustomer']);
+Route::get('addCustomer2',[CustomerController::class,'addCustomer2']);
+Route::post('addCustomer3',[CustomerController::class,'addCustomer3']);
+
+Route::get('updateCustomer1',[CustomerController::class,'updateCustomer1']);
+Route::put('updateCustomer2/{id}',[CustomerController::class,'updateCustomer2']);
+Route::patch('updateCustomer3',[CustomerController::class,'updateCustomer3']);
+Route::get('massUpdate',[CustomerController::class,'massUpdate']);
+Route::delete('deleteCustomer/{id}',[CustomerController::class,'deleteCustomer']);
+Route::get('massDelete',[CustomerController::class,'massDelete']);
+Route::put('updateCustomer4/{id}',[CustomerController::class,'updateCustomer4']);
+
+Route::apiResource('post',PostControllerAPI::class);
 
