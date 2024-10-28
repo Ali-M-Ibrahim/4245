@@ -9,6 +9,9 @@ use App\Http\Controllers\FirstController;
  use App\Http\Controllers\ReaderController;
  use App\Http\Controllers\CustomerController;
  use App\Http\Controllers\PostControllerAPI;
+ use App\Http\Controllers\ViewController;
+
+
 
 
 
@@ -161,4 +164,12 @@ Route::get('massDelete',[CustomerController::class,'massDelete']);
 Route::put('updateCustomer4/{id}',[CustomerController::class,'updateCustomer4']);
 
 Route::apiResource('post',PostControllerAPI::class);
+
+Route::get('index',[ViewController::class,'index']);
+ Route::get('index2',[ViewController::class,'index2']);
+ Route::get('index3',[ViewController::class,'index3']);
+
+ Route::get('getCustomersScreen',[ViewController::class,'getCustomersScreen']);
+
+ Route::get('getSingleCustomerScreen/{id}',[ViewController::class,'getSingleCustomerScreen']);
 

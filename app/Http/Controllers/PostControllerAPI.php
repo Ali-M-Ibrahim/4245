@@ -23,6 +23,7 @@ class PostControllerAPI extends Controller
      */
     public function store(Request $request)
     {
+        //C
         $data = Post::create($request->all());
         return response()->json(["code"=>"201",'message'=>"created"]);
     }
@@ -32,6 +33,7 @@ class PostControllerAPI extends Controller
      */
     public function show(string $id)
     {
+        //R
         $data = Post::find($id);
         return $data;
     }
@@ -41,6 +43,7 @@ class PostControllerAPI extends Controller
      */
     public function update(Request $request, string $id)
     {
+        //U
         $data = Post::find($id);
         $data->fill($request->all());
         $data->save();
@@ -52,6 +55,7 @@ class PostControllerAPI extends Controller
      */
     public function destroy(string $id)
     {
+        //D
         $data = Post::find($id);
         $data->delete();
         return response()->json(["code"=>"200",'message'=>"deleted"]);
