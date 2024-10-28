@@ -13,7 +13,10 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->validateCsrfTokens(except: [
             'route-14',
-            'route-15'
+            'route-15',
+            'addReaderFromApi',
+            'addReaderMethod2FromPostman',
+            'addReader3'
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {

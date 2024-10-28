@@ -9,6 +9,8 @@ class Reader extends Model
 {
     use HasFactory;
 
+    protected $fillable=['name','biography','nbofbooks','country'];
+
     function getBooks()
     {
         return $this->belongsToMany(

@@ -14,6 +14,9 @@ return new class extends Migration
         Schema::create('readers', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->longText('biography');
+            $table->integer('nbofbooks');
+            $table->string('country');
             $table->timestamps();
         });
     }

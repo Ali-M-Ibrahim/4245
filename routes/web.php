@@ -5,8 +5,8 @@ use App\Http\Controllers\FirstController;
  use App\Http\Controllers\ResourceController;
  use App\Http\Controllers\ApiController;
  use App\Http\Controllers\InvokableController;
-
  use App\Http\Controllers\RelationshipController;
+ use App\Http\Controllers\ReaderController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -100,5 +100,43 @@ Route::get('test1',[RelationshipController::class,'getBooksFromAuthor']);
  Route::get('test4',[RelationshipController::class,'getBookFromDetails']);
  Route::get('test5',[RelationshipController::class,'getReadersFromBook']);
  Route::get('test6',[RelationshipController::class,'getBooksFromReader']);
+
+
+Route::get('getAllReaders',[ReaderController::class,'getAllReaders']);
+Route::get('getReaderById/{id}',[ReaderController::class,'getReaderById']);
+Route::get('getReadersHavingNb1',[ReaderController::class,'getReadersHavingNb1']);
+Route::get('getReadersHavingNbgt1',[ReaderController::class,'getReadersHavingNbgt1']);
+Route::get('getReadersByNbAndId',[ReaderController::class,'getReadersByNbAndId']);
+Route::get('getReadersHavingNbgt1Take1',[ReaderController::class,'getReadersHavingNbgt1Take1']);
+Route::get('getReadersByNbAndIdTake3',[ReaderController::class,'getReadersByNbAndIdTake3']);
+Route::get('getReadersWhereNbGt1OrIdgt2',[ReaderController::class,'getReadersWhereNbGt1OrIdgt2']);
+Route::get('getReaderWhereIdIn',[ReaderController::class,'getReaderWhereIdIn']);
+Route::get('getReadersWhereIdBetween1And3',[ReaderController::class,'getReadersWhereIdBetween1And3']);
+Route::get('getNameFromReadersWhereNbGt1',[ReaderController::class,'getNameFromReadersWhereNbGt1']);
+Route::get('getNameAndBioFromReadersWhereNbGt1',[ReaderController::class,'getNameAndBioFromReadersWhereNbGt1']);
+Route::get('getReadereOrderByIddesc',[ReaderController::class,'getReadereOrderByIddesc']);
+ Route::get('getReadereOrderByIdAsc',[ReaderController::class,'getReadereOrderByIdAsc']);
+ Route::get('getReadersGroupBynbofbooks',[ReaderController::class,'getReadersGroupBynbofbooks']);
+ Route::get('getMaxNbOfBooks',[ReaderController::class,'getMaxNbOfBooks']);
+ Route::get('getMinNbOfBooks',[ReaderController::class,'getMinNbOfBooks']);
+ Route::get('getcountNbOfBooks',[ReaderController::class,'getcountNbOfBooks']);
+
+ Route::get('getSumNbOfBooks',[ReaderController::class,'getSumNbOfBooks']);
+ Route::get('getAvgNbOfBooks',[ReaderController::class,'getAvgNbOfBooks']);
+ Route::get('findByIdOrFail/{id}',[ReaderController::class,'findByIdOrFail']);
+
+ Route::get('firstOrFail',[ReaderController::class,'firstOrFail']);
+
+ Route::get('findOrMessage/{id}',[ReaderController::class,'findOrMessage']);
+ Route::get('firstOrMessage',[ReaderController::class,'firstOrMessage']);
+ Route::get('getJoinData',[ReaderController::class,'getJoinData']);
+ Route::get('getJoinData2',[ReaderController::class,'getJoinData2']);
+ Route::get('addReader',[ReaderController::class,'addReader']);
+ Route::post('addReaderFromApi',[ReaderController::class,'addReaderFromApi']);
+
+ Route::get('addReaderMethod2',[ReaderController::class,'addReaderMethod2']);
+ Route::post('addReaderMethod2FromPostman',[ReaderController::class,'addReaderMethod2FromPostman']);
+ Route::post('addReader3',[ReaderController::class,'addReader3']);
+
 
 
