@@ -10,9 +10,9 @@ use App\Http\Controllers\FirstController;
  use App\Http\Controllers\CustomerController;
  use App\Http\Controllers\PostControllerAPI;
  use App\Http\Controllers\ViewController;
+ use App\Http\Controllers\EmployeeController;
 
-
-
+ use App\Http\Controllers\EmployeeResource;
 
 
 Route::get('/', function () {
@@ -173,3 +173,15 @@ Route::get('index',[ViewController::class,'index']);
 
  Route::get('getSingleCustomerScreen/{id}',[ViewController::class,'getSingleCustomerScreen']);
 
+ Route::get('createemployee',[EmployeeController::class,'create'])->name('create-employee');
+Route::post('store-employee',[EmployeeController::class,'store'])->name('employee-store');
+ Route::get('list-employee',[EmployeeController::class,'list'])->name('list-employee');
+ Route::delete('delete-employee/{id}',[EmployeeController::class,'delete'])->name('delete-employee');
+ Route::get('delete-employee2/{id}',[EmployeeController::class,'delete'])->name('delete-employee2');
+ Route::get('view-employee/{id}',[EmployeeController::class,'view'])->name('view-employee');
+ Route::get('edit-employee/{id}',[EmployeeController::class,'edit'])->name('edit-employee');
+ Route::put('update-employee/{id}',[EmployeeController::class,'update'])->name('update-employee');
+
+
+
+ Route::resource('employee',EmployeeResource::class);
