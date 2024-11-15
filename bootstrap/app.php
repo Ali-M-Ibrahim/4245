@@ -11,6 +11,10 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
+        $middleware->alias([
+            'checkingkey' => \App\Http\Middleware\checkkey::class,
+        ]);
+
         $middleware->validateCsrfTokens(except: [
             'route-14',
             'route-15',

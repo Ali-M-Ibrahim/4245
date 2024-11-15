@@ -13,6 +13,11 @@ use App\Http\Controllers\FirstController;
  use App\Http\Controllers\EmployeeController;
 
  use App\Http\Controllers\EmployeeResource;
+ use App\Http\Controllers\UploadController;
+ use App\Http\Controllers\DIController;
+ use App\Http\Controllers\MiddlewareController;
+
+
 
 
 Route::get('/', function () {
@@ -185,3 +190,19 @@ Route::post('store-employee',[EmployeeController::class,'store'])->name('employe
 
 
  Route::resource('employee',EmployeeResource::class);
+
+ Route::get('upload-image',[UploadController::class,'upload']);
+ Route::post('upload',[UploadController::class,'method1'])->name('method1');
+ Route::get('display-image/{id}',[UploadController::class,'displayImage']);
+ Route::post('upload2',[UploadController::class,'method2'])->name('method2');
+ Route::post('upload3',[UploadController::class,'method3'])->name('method3');
+
+
+ Route::get('f1',[DIController::class,'f1']);
+ Route::get('f2',[DIController::class,'f2']);
+ Route::get('f3',[DIController::class,'f3']);
+ Route::get('f4',[DIController::class,'f4']);
+
+
+ Route::get('testm',[MiddlewareController::class,'index'])->middleware('checkingkey');
+ Route::get('testm2',[MiddlewareController::class,'index2']);
